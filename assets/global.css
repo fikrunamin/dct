@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://unpkg.com/open-props");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.card {
+  background: white;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-3);
+}
+
+button.btn,
+a.btn {
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999999px;
+  color: black;
+  text-align: center;
+  display: block;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+button.btn:disabled {
+  background: gray;
+  color: white;
+}
+
+button.btn[aria-busy="true"]::after {
+  content: "Loading...";
+  background: gray;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+}
+
+.btn.btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-content: center;
+}
+
+.btn.block {
+  width: 100%;
+}
+
+.btn.btn-primary {
+  color: white;
+  background: #58bb19;
+}
+
+.btn.btn-danger {
+  color: white;
+  background: tomato;
+}
+
+.btn.btn-primary:focus {
+  outline: #58bb19 solid 2px;
+  outline-offset: 4px;
+}
+
+.form-control .label {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-5);
+  opacity: 0.6;
+  margin-bottom: 0.25rem;
+}
+
+input.input {
+  font-size: var(--font-size-1);
+  border-radius: 0.5rem;
+  border: none;
+  outline: var(--gray-6) solid 1px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+input.input:focus:not(.invalid) {
+  outline: #58bb19 solid 1px;
+}
+
+input.input.invalid {
+  outline: tomato solid 1px;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog {
+  transition-duration: 300ms;
+  max-width: 100vw;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: fixed;
+  margin: auto;
+  border: none;
+}
+
+dialog > header {
+  margin-bottom: 1rem;
+}
+
+dialog > footer {
+  margin-top: 1.5rem;
+}
+
+dialog footer menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+dialog[modal-mode="mega"]:modal {
+  max-width: 100vw;
+}
+
+dialog[modal-mode="mega"]::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-animation: backdrop-fade 300ms ease forwards;
+  animation: backdrop-fade 300ms ease forwards;
+}
+
+dialog[modal-mode="mega"]::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-animation: backdrop-fade 300ms ease forwards;
+  animation: backdrop-fade 300ms ease forwards;
+}
+
+dialog[modal-mode="mega"]:not([open]) {
+  pointer-events: none;
+  -webkit-animation: slide-down 300ms ease forwards;
+  animation: slide-down 300ms ease forwards;
+}
+
+dialog[modal-mode="mega"] {
+  -webkit-animation: slide-up 300ms ease forwards;
+  animation: slide-up 300ms ease forwards;
+}
+
+@media screen and (max-width: 768px) {
+  dialog[modal-mode="mega"]:modal {
+    margin-bottom: 0px;
+    width: 100% !important;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 1;
+    display: block;
+    transform: translateY(0);
+  }
+  99% {
+    transform: translateY(70%);
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    transform: translateY(70%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    display: block;
+    transform: translateY(0);
+  }
+  99% {
+    transform: translateY(70%);
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    transform: translateY(70%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes slide-up {
+  from {
+    transform: translateY(70%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(70%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes backdrop-fade {
+  from {
+    background: transparent;
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes backdrop-fade {
+  from {
+    background: transparent;
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

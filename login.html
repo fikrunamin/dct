@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DCT Test</title>
+
+    <link rel="stylesheet" href="/assets/global.css" />
+    <link rel="stylesheet" href="/assets/login/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="main-title__login">
+        <h1>Welcome back</h1>
+        <h5>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi itaque
+          beatae inventore sequi.
+        </h5>
+      </div>
+
+      <form class="login-form__login">
+        <div class="login-form-content__login">
+          <label class="form-control">
+            <div class="label">Email</div>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              class="input"
+              inputmode="email"
+            />
+          </label>
+          <label class="form-control">
+            <div class="label">Password</div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="input"
+            />
+          </label>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <button
+          href="/src/pages/login"
+          class="btn btn-primary block login-button__login"
+        >
+          Login
+        </button>
+      </form>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/global.js"></script>
+    <script src="/assets/login/main.js"></script>
+  </body>
+</html>

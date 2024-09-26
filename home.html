@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - DCT Test</title>
+
+    <link rel="stylesheet" href="./assets/global.css" />
+    <link rel="stylesheet" href="/assets/home/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="main-title__home">
+        <h1>Welcome back</h1>
+        <h5>Kamis, 26 Sep 2024</h5>
+
+        <button class="btn" style="margin: 1rem 0" id="logout">Logout</button>
+      </div>
+
+      <button
+        class="btn btn-primary create-user__home"
+        onclick="openDialog(`#create-user-dialog__home`)"
+      >
+        <div>Create user</div>
+        <span class="material-icons">add</span>
+      </button>
+
+      <div id="list-users" class="list-users-wrapper_home">
+        <div class="title">List Users</div>
+        <ul class="list-users_home"></ul>
+        <div style="margin: 1rem 0">
+          <button class="btn btn-primary load-more" style="margin: 0 auto">
+            Load more
+          </button>
+        </div>
+      </div>
+    </main>
+    <dialog id="create-user-dialog__home" modal-mode="mega">
+      <header>
+        <h3>Create User</h3>
+      </header>
+      <form id="create-user-form">
+        <label class="form-control">
+          <div class="label">Name</div>
+          <input type="text" name="name" placeholder="Name" class="input" />
+        </label>
+        <label class="form-control">
+          <div class="label">Job</div>
+          <input
+            type="text"
+            name="job"
+            placeholder="Job"
+            class="input"
+            inputmode="email"
+          />
+        </label>
+      </form>
+      <footer>
+        <menu>
+          <button
+            class="btn"
+            type="button"
+            onclick="closeDialog(`#create-user-dialog__home`)"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary" type="submit" form="create-user-form">
+            Create
+          </button>
+        </menu>
+      </footer>
+    </dialog>
+
+    <dialog id="update-user-dialog__home" modal-mode="mega">
+      <header>
+        <h3>Update User</h3>
+      </header>
+      <form id="update-user-form">
+        <input type="hidden" name="id" />
+        <label class="form-control">
+          <div class="label">Name</div>
+          <input type="text" name="name" placeholder="Name" class="input" />
+        </label>
+        <label class="form-control">
+          <div class="label">Job</div>
+          <input
+            type="text"
+            name="job"
+            placeholder="Job"
+            class="input"
+            inputmode="email"
+          />
+        </label>
+      </form>
+      <footer>
+        <menu>
+          <button
+            class="btn"
+            type="button"
+            onclick="closeDialog(`#update-user-dialog__home`)"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary" type="submit" form="update-user-form">
+            Update
+          </button>
+        </menu>
+      </footer>
+    </dialog>
+
+    <dialog id="delete-user-dialog__home" modal-mode="mega">
+      <header>
+        <h3>Delete User</h3>
+      </header>
+      <p>This action cannot be undone.</p>
+      <form id="delete-user-form">
+        <input type="hidden" name="id" />
+      </form>
+      <footer>
+        <menu>
+          <button
+            class="btn"
+            type="button"
+            onclick="closeDialog(`#delete-user-dialog__home`)"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-danger" type="submit" form="delete-user-form">
+            Delete
+          </button>
+        </menu>
+      </footer>
+    </dialog>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="/assets/global.js"></script>
+    <script src="/assets/home/main.js"></script>
+    <script src="/assets/home/user.js"></script>
+  </body>
+</html>
