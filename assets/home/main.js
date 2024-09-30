@@ -1,5 +1,5 @@
 if (!auth.isLoggedin()) {
-  window.location.href = "/login.html";
+  window.location.href = "/dct/login.html";
 }
 
 const openDialog = (selector) => $(selector).get(0).showModal();
@@ -94,7 +94,7 @@ $(function () {
   const logoutButton = $("#logout");
   logoutButton.click(function () {
     auth.logout();
-    window.location.href = "/login.html";
+    window.location.href = "/dct/login.html";
   });
 
   renderListUsers();

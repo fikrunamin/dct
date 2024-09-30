@@ -1,5 +1,5 @@
 if (auth.isLoggedin()) {
-  window.location.href = "/home.html";
+  window.location.href = "home.html";
 }
 
 $(function () {
@@ -20,7 +20,7 @@ $(function () {
       },
       {
         onSuccess: () => {
-          window.location.href = "/home.html";
+          window.location.href = "home.html";
         },
         onFailed: (error) => {
           form[0].focus();
