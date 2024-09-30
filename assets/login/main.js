@@ -1,5 +1,5 @@
 if (auth.isLoggedin()) {
-  window.location.href = "home.html";
+  window.location.href = "/dct/home.html";
 }
 
 $(function () {
